@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: io.prestosql:presto-jdbc:306">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/prestosql/presto-jdbc/306/presto-jdbc-306.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/io/prestosql/presto-jdbc/306/presto-jdbc-306-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/prestosql/presto-jdbc/306/presto-jdbc-306-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

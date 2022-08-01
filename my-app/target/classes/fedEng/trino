@@ -1,0 +1,11 @@
+{
+   systemName:trino
+   url:jdbc:trino://localhost:9002?user=admin
+   db:
+   port:9002
+   User:admin
+   password:secret
+   tablenameStart:
+   driverName:
+   driverJar:
+}

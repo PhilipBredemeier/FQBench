@@ -1,0 +1,11 @@
+{
+   systemName:postgres
+   url:jdbc:postgresql://localhost:15432/db1
+   db:db1
+   port:15432
+   user:postgres
+   password:123456
+   tablenameStart:pgdb1
+   driverName:org.postgresql.Driver
+   driverJar:src/main/JDBC_Driver/postgresql-42.2.18.jar
+}

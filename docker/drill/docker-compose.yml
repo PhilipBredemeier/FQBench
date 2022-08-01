@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+
+  drill:
+    image: drill
+    volumes:
+      - vol_dask_data:/data
+    entrypoint:
+      - /bin/bash
+    ports:
+      - 8047:8047
+
+volumes:
+  vol_dask_data:
+
+networks:
+  default:
+    name: fq-bench-net

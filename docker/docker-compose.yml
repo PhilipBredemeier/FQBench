@@ -1,0 +1,103 @@
+version: "3.7"
+
+services:
+
+  postgres-1:
+    image: postgresdb
+    container_name: pg1
+    hostname: pg1
+    restart: always
+    volumes:
+      - test-data:/data
+      - pgvolume1:/var/lib/postgresql/
+    ports:
+      - 15432:5432
+
+  postgres-2:
+    image: postgresdb
+    container_name: pg2
+    hostname: pg2
+    restart: always
+    volumes:
+      - test-data:/data
+      - pgvolume2:/var/lib/postgresql/
+    ports:
+      - 25432:5432    
+
+  mariadb:
+    image: mariadb
+    container_name: mdb1
+    hostname: mdb1
+    restart: always
+    volumes:
+      - test-data:/data
+      - mvolume:/var/lib/mysql
+    ports:
+      - 13306:3306
+    environment:
+      - MARIADB_ROOT_PASSWORD=123456
+      - MARIADB_DATABASE=mdb
+      - MARIADB_USER=mariadb
+      - MARIADB_PASSWORD=123456
+
+  presto:
+    image: ahanaio/prestodb-sandbox
+    container_name: presto
+    restart: always
+    volumes:
+      - /Users/philip/Documents/TUBerlin/BA/FQBench_Maven/docker/presto2/catalog:/opt/presto-server/etc/catalog
+      #- /Users/philip/Documents/TUBerlin/BA/ProjektCodeHari/polydb-main/docker/presto2/coordinator:/opt/presto-server/etc/coordinator
+    ports:
+      - 9001:9001
+
+  trino:
+    image: trinodb/trino
+    container_name: trino
+    restart: always
+    volumes:
+      - /Users/philip/Documents/TUBerlin/BA/FQBench_Maven/docker/trino/catalog:/etc/trino/catalog
+    ports:
+      - 9002:9002
+
+  spark:
+    image: docker.io/bitnami/spark:3
+    container_name: spark
+    environment:
+      - SPARK_MODE=master
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+      - SPARK_SSL_ENABLED=no
+    ports:
+      - 8080:8080
+      - 7077:7077
+  spark-worker:
+    image: docker.io/bitnami/spark:3
+    container_name: spark_worker
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark:7077
+      - SPARK_WORKER_MEMORY=2G
+      - SPARK_WORKER_CORES=1
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+      - SPARK_SSL_ENABLED=no
+
+  polydb:
+    image: polydb
+    container_name: polydb
+    restart: always
+    tty: true
+
+volumes:
+  test-data:
+    external: true
+  pgvolume1:
+  pgvolume2:
+  mvolume:
+  catalog:
+
+networks:
+  default:
+    name: fq-bench-net

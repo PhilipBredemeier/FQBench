@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: io.trino:trino-jdbc:385">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/trino/trino-jdbc/385/trino-jdbc-385.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/io/trino/trino-jdbc/385/trino-jdbc-385-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/trino/trino-jdbc/385/trino-jdbc-385-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,11 @@
+{
+   systemName:trino
+   url:jdbc:trino://trino:9002?user=admin
+   db:
+   port:9002
+   User:admin
+   password:secret
+   tablenameStart:
+   driverName:io.trino-jdbc.Driver
+   driverJar:trino-jdbc-385.jar
+}

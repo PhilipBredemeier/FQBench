@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="trino-jdbc-371">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/trino-jdbc-371.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

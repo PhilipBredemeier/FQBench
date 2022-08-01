@@ -1,0 +1,11 @@
+{
+   systemName:mariadb
+   url:jdbc:mariadb://localhost:13306/mdb
+   db:mdb
+   port:13306
+   user:mariadb
+   password:123456
+   tablenameStart:mdb
+   driverName:org.mariadb.jdbc.Driver
+   driverJar:src/main/JDBC_Driver/mariadb-java-client-2.7.1.jar
+}

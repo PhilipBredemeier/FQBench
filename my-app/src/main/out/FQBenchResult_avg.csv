@@ -1,0 +1,7 @@
+FederatedEngine,TableDistribution,RuntimeAverage
+presto,TD1,3118
+spark,TD1,22469
+trino,TD1,2108
+presto,TD2,2747
+spark,TD2,23950
+trino,TD2,1990

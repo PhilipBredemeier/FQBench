@@ -1,0 +1,11 @@
+{
+   systemName:presto
+   url:jdbc:presto://presto:9001?user=admin
+   db:
+   port:9001
+   user:test
+   password:secret
+   tablenameStart:
+   driverName:
+   driverJar:
+}

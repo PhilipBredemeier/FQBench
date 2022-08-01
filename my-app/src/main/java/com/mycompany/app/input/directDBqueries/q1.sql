@@ -1,0 +1,1 @@
+select * from public.pgdb1_sf1_customer order by c_custkey limit 5
